@@ -1,3 +1,4 @@
+import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
@@ -10,12 +11,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const DetialPage = () => {
+const TopPage = ({ navigation }) => {
+  const title = 'Hello React Native';
+  const handleToDetial = () => {
+    navigation.navigate('Detial');
+  };
   return (
     <View style={styles.container}>
-      <Text>Show Detial</Text>
+      <StatusBar style="auto" />
+      <Text>{title}</Text>
+      <Button title="Detial" onPress={handleToDetial} />
     </View>
   );
 };
 
-export default DetialPage;
+export default TopPage;
